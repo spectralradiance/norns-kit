@@ -13,7 +13,7 @@ look, and the roadmap.
 | --- | --- | --- |
 | [`@norn-apps/config`](packages/config) | TypeScript, oxlint, Prettier and Vitest presets | [On npm](https://www.npmjs.com/package/@norn-apps/config) |
 | `@norn-apps/ui` | Tokens, themes, fonts, components | Planned |
-| `@norn-apps/atproto-lexicons` | AT Protocol record types (`app.skuldr.*`) | Planned; today in Skuldr's repo |
+| [`@norn-apps/atproto-lexicons`](packages/atproto-lexicons) | Draft AT Protocol record types (`app.skuldr.*`) | Ready; not yet on npm |
 | `@norn-apps/formats` | Highlight export, deep links, share URL | Planned |
 | `@norn-apps/fetch` | SSRF-safe fetch, Readability extraction | Planned |
 | `@norn-apps/atproto` | OAuth client, identity, instance picker | Planned |
@@ -24,7 +24,7 @@ Requires Node 22.18+.
 
 ```bash
 npm install
-npm run check     # Prettier, oxlint, and the fixture app that uses every preset
+npm run check     # Prettier, oxlint, the fixture app that uses every preset, and the tests
 npm run format    # rewrite files in the shared style
 ```
 

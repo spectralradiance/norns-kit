@@ -118,7 +118,7 @@ The options that were weighed:
 urdr/         the reader       (today: echtra)
 verdandi/     the writer       (today: ogma)
 skuldr/       the social app   (today: rhyza)
-norns-kit/    npm workspaces: packages/ui, config, lexicons, formats, fetch, atproto
+norns-kit/    npm workspaces: packages/ui, config, atproto-lexicons, formats, fetch, atproto
               plus this plan (PLAN.md)
 ```
 
@@ -135,8 +135,8 @@ norns-kit/    npm workspaces: packages/ui, config, lexicons, formats, fetch, atp
 - **Handoff formats are versioned on the wire.** Separately released apps can be on
   different versions, so every highlight export, deep link and share URL carries a format
   version (`v=1`). Readers accept older versions and ignore fields they don't know.
-- **Lexicons** move out of Skuldr's `packages/lexicons` into `norns-kit`, because Verdandi
-  and Urdr need them too.
+- **Lexicons** live in `norns-kit` as `@norn-apps/atproto-lexicons`, moved out of Skuldr
+  because Verdandi and Urdr need them too.
 - **Config:** `@norn-apps/config` keeps tooling in step: each repo's tsconfig, oxlint and
   Prettier configs extend it, so one version bump updates all three.
 
@@ -292,10 +292,14 @@ feed UI.
 - [x] Create `norns-kit` with Changesets and move this plan into it (Nov 13)
 - [x] `@norn-apps/config` 0.1.0: TypeScript presets (base, react, node, node-script), oxlint
       (base, react), Prettier and Vitest, checked by a fixture app
-- [ ] Move the lexicons from Skuldr into `norns-kit` as `@norn-apps/atproto-lexicons`
+- [x] Move the lexicons from Skuldr into `norns-kit` as `@norn-apps/atproto-lexicons` (Nov 13),
+      with a test that parses each one and resolves its references
 - [x] Create the `norns-kit` repo on GitHub ([spectralradiance/norns-kit](https://github.com/spectralradiance/norns-kit), Nov 13)
-- [x] Publish `@norn-apps/config` to npm (Nov 14): 0.1.0, then 0.1.1 to allow Vitest 5
-- [ ] Adopt `@norn-apps/config` in each repo: TypeScript 6, oxlint, Prettier, Vitest
+- [x] Publish `@norn-apps/config` to npm (Nov 14): 0.1.0, then 0.1.1 to allow Vitest 5, then
+      0.1.2 turning off two rules that flagged correct code
+- [ ] Publish `@norn-apps/atproto-lexicons` 0.1.0 to npm
+- [x] Adopt `@norn-apps/config` in Urdr and Skuldr: TypeScript 6, oxlint, Prettier, Vitest
+- [ ] Adopt `@norn-apps/config` in Verdandi, once its work in progress is committed
 
 **Phase 1 — Shared look**
 - [ ] `@norn-apps/ui`: tokens, scheme + palette themes, bundled fonts, first components,
