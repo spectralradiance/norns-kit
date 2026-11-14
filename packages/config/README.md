@@ -44,6 +44,10 @@ oxlint resolves `extends` as a path relative to the config file, so point it int
 }
 ```
 
+oxlint skips what `.gitignore` lists, so make sure it lists `node_modules/`. An
+`ignorePatterns` inside these presets would have no effect: oxlint only reads ignore
+patterns from the app's own config.
+
 - `oxlint/base.json`: the correctness rules as errors and suspicious ones as warnings, with
   the TypeScript, unicorn, oxc and import plugins.
 - `oxlint/react.json`: base plus the React and jsx-a11y plugins, with the rules of hooks as
@@ -70,7 +74,8 @@ export default mergeConfig(base, defineConfig({}))
 ```
 
 It finds `*.test.ts(x)` under `src/`, `scripts/` and `worker/`, runs in Node, and restores
-mocks after each test.
+mocks after each test. It works with Vitest 4 and 5. Vitest 5 needs `vite` installed alongside
+it (`npm install -D vite`).
 
 ## License
 

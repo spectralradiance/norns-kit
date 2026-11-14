@@ -1,6 +1,6 @@
 {
   "name": "@norn-apps/config",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Shared TypeScript, oxlint, Prettier and Vitest presets for the Norn apps",
   "license": "GPL-3.0-or-later",
   "type": "module",
@@ -19,6 +19,7 @@
     "prettier.d.ts",
     "vitest.js",
     "vitest.d.ts",
+    "CHANGELOG.md",
     "LICENSE",
     "LICENSE-EXCEPTION"
   ],
@@ -39,7 +40,7 @@
     "oxlint": "^1.87.0",
     "prettier": "^3.0.0",
     "typescript": "^6.0.0",
-    "vitest": "^4.0.0"
+    "vitest": "^4.0.0 || ^5.0.0"
   },
   "peerDependenciesMeta": {
     "oxlint": {
