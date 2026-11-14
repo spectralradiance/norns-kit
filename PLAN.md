@@ -8,9 +8,9 @@ Nov 13, 2026 · Matthew Cooper
 the rest: moving features to the app that owns them, putting all three on one stack and
 one look, and the roadmap for each app after that.
 
-- **Urdr Reader** (echtra): where you take things in.
-- **Verdandi Writer** (ogma): where you write.
-- **Skuldr Social** (rhyza): where you publish and talk with people.
+- **Urdr Reader** (once Echtra): where you take things in.
+- **Verdandi Writer** (once Ogma): where you write.
+- **Skuldr Social** (once rhyza): where you publish and talk with people.
 
 Each app repo's own `PLAN.md` carries its scope and phases. This document, kept in
 `norns-kit`, is the cross-app layer on top of them.
@@ -115,11 +115,11 @@ The options that were weighed:
 `norns-kit`, which holds only packages and this plan.
 
 ```
-urdr/         the reader       (today: echtra)
-verdandi/     the writer       (today: ogma)
-skuldr/       the social app   (today: rhyza)
-norns-kit/    npm workspaces: packages/ui, config, atproto-lexicons, formats, fetch, atproto
-              plus this plan (PLAN.md)
+urdr-reader/      the reader       (was echtra)
+verdandi-writer/  the writer       (was ogma)
+skuldr-social/    the social app   (was rhyza)
+norns-kit/        npm workspaces: packages/ui, config, atproto-lexicons, formats, fetch, atproto
+                  plus this plan (PLAN.md)
 ```
 
 - **Publishing:** the packages are published to the public npm registry under a scope you
@@ -288,7 +288,16 @@ feed UI.
       (`app.skuldr.feed.subscription`); it gets Urdr's own namespace when Urdr's sync is built
 - [ ] Point `skuldr.app` at your instance; later add the `_lexicon` DNS records so other
       apps can look up the schemas
-- [ ] Rename repos, packages, app IDs and folders to `urdr`, `verdandi`, `skuldr`
+- [x] Rename the GitHub repos and folders to `urdr-reader`, `verdandi-writer`, `skuldr-social`
+- [x] Rename Urdr and Skuldr in code (Nov 13). Urdr copies its old `echtra` browser database
+      across on first open; its Worker is now `urdr-reader`, so the next deploy goes to a new
+      workers.dev URL and the `echtra` Worker can be deleted after. Skuldr's cookie rename signs
+      everyone in once more; Docker instances from before the rename set `POSTGRES_USER` and
+      `POSTGRES_DB` to `rhyza`
+- [ ] Rename Verdandi in code once its work in progress is committed: package and product
+      name, the `%APPDATA%\Ogma` profile (copy it across on first launch), `OGMA_*`
+      environment variables (keep reading the old ones), `.ogma/` folders and the `ogma_ai`
+      sidecar
 - [x] Create `norns-kit` with Changesets and move this plan into it (Nov 13)
 - [x] `@norn-apps/config` 0.1.0: TypeScript presets (base, react, node, node-script), oxlint
       (base, react), Prettier and Vitest, checked by a fixture app
