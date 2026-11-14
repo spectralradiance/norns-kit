@@ -1,0 +1,6 @@
+# Markdown is hand-formatted: Prettier would pad every table column.
+*.md
+LICENSE
+LICENSE-EXCEPTION
+package-lock.json
+.changeset/*.md

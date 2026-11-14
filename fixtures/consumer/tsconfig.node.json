@@ -1,0 +1,4 @@
+{
+  "extends": "@norn-apps/config/tsconfig/node-script.json",
+  "include": ["scripts"]
+}

@@ -1,0 +1,13 @@
+{
+  "plugins": ["typescript", "unicorn", "oxc", "import"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn"
+  },
+  "env": {
+    "es2024": true
+  },
+  "rules": {
+    "import/no-cycle": "warn"
+  }
+}

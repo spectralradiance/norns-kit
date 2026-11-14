@@ -1,0 +1,55 @@
+{
+  "name": "@norn-apps/config",
+  "version": "0.1.0",
+  "description": "Shared TypeScript, oxlint, Prettier and Vitest presets for the Norn apps",
+  "license": "GPL-3.0-or-later",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spectralradiance/norns-kit.git",
+    "directory": "packages/config"
+  },
+  "engines": {
+    "node": ">=22.18"
+  },
+  "files": [
+    "tsconfig",
+    "oxlint",
+    "prettier.js",
+    "prettier.d.ts",
+    "vitest.js",
+    "vitest.d.ts",
+    "LICENSE",
+    "LICENSE-EXCEPTION"
+  ],
+  "exports": {
+    "./tsconfig/*": "./tsconfig/*",
+    "./oxlint/*": "./oxlint/*",
+    "./prettier": {
+      "types": "./prettier.d.ts",
+      "default": "./prettier.js"
+    },
+    "./vitest": {
+      "types": "./vitest.d.ts",
+      "default": "./vitest.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "peerDependencies": {
+    "oxlint": "^1.87.0",
+    "prettier": "^3.0.0",
+    "typescript": "^6.0.0",
+    "vitest": "^4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "oxlint": {
+      "optional": true
+    },
+    "prettier": {
+      "optional": true
+    },
+    "vitest": {
+      "optional": true
+    }
+  }
+}

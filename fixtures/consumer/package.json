@@ -1,0 +1,12 @@
+{
+  "name": "@norn-apps/config-fixture",
+  "private": true,
+  "description": "A tiny app that uses @norn-apps/config the way the Norn apps do, so `npm run check` proves the presets resolve and pass.",
+  "type": "module",
+  "scripts": {
+    "check": "tsc -p tsconfig.json && tsc -p tsconfig.node.json && oxlint && node scripts/hello.ts && vitest run"
+  },
+  "devDependencies": {
+    "@norn-apps/config": "*"
+  }
+}

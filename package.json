@@ -1,0 +1,30 @@
+{
+  "name": "norns-kit",
+  "private": true,
+  "license": "GPL-3.0-or-later",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "workspaces": [
+    "packages/*",
+    "fixtures/*"
+  ],
+  "scripts": {
+    "format": "prettier --write .",
+    "lint": "oxlint",
+    "check": "prettier --check . && oxlint && npm run check -w @norn-apps/config-fixture",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "npm run check && changeset publish"
+  },
+  "prettier": "@norn-apps/config/prettier",
+  "devDependencies": {
+    "@changesets/cli": "^2.31.1",
+    "@types/node": "^24.19.2",
+    "oxlint": "^1.93.0",
+    "prettier": "^3.10.1",
+    "typescript": "~6.0.3",
+    "vitest": "^4.1.12"
+  }
+}
