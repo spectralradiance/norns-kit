@@ -1,7 +1,7 @@
 {
   "lexicon": 1,
   "id": "app.skuldr.story",
-  "description": "DRAFT. A short-lived image or video. expiresAt is honoured by rhyza instances only: the record is public in the repo and other indexers may keep copies after deletion.",
+  "description": "DRAFT. A short-lived image or video. expiresAt is honoured by Skuldr instances only: the record is public in the repo and other indexers may keep copies after deletion.",
   "defs": {
     "main": {
       "type": "record",
