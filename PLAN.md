@@ -293,7 +293,8 @@ feed UI.
 - [x] `@norn-apps/config` 0.1.0: TypeScript presets (base, react, node, node-script), oxlint
       (base, react), Prettier and Vitest, checked by a fixture app
 - [ ] Move the lexicons from Skuldr into `norns-kit` as `@norn-apps/lexicons`
-- [ ] Create the `norns-kit` repo on GitHub and publish `@norn-apps/config`
+- [x] Create the `norns-kit` repo on GitHub ([spectralradiance/norns-kit](https://github.com/spectralradiance/norns-kit), Nov 13)
+- [ ] Publish `@norn-apps/config` to npm
 - [ ] Adopt `@norn-apps/config` in each repo: TypeScript 6, oxlint, Prettier, Vitest
 
 **Phase 1 — Shared look**
