@@ -286,8 +286,11 @@ feed UI.
 - [x] Move lexicons from `app.rhyza.*` to `app.skuldr.*` (Nov 13, branch
       `lexicons/app-skuldr` in Skuldr). The feed subscription record moved too
       (`app.skuldr.feed.subscription`); it gets Urdr's own namespace when Urdr's sync is built
-- [ ] Point `skuldr.app` at your instance; later add the `_lexicon` DNS records so other
-      apps can look up the schemas
+- [x] Point `skuldr.app` at an instance (Nov 14): Skuldr runs on the home PC on embedded
+      Postgres (`PGLITE_DIR`), behind the Cloudflare Tunnel `skuldr`. Two logon tasks,
+      "Skuldr server" and "Skuldr tunnel", keep it up, so it's down while the PC is off or
+      asleep. Move it to a server before inviting other people
+- [ ] Add the `_lexicon` DNS records so other apps can look up the schemas
 - [x] Rename the GitHub repos and folders to `urdr-reader`, `verdandi-writer`, `skuldr-social`
 - [x] Rename Urdr and Skuldr in code (Nov 13). Urdr copies its old `echtra` browser database
       across on first open. Its Worker is `urdr-reader`, deployed Nov 13 at
