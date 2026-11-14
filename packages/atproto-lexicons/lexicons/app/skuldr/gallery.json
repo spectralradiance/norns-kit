@@ -1,0 +1,46 @@
+{
+  "lexicon": 1,
+  "id": "app.skuldr.gallery",
+  "description": "DRAFT. A photo gallery: an ordered set of images with captions. Clients that don't know this type can show the optional fallback post.",
+  "defs": {
+    "main": {
+      "type": "record",
+      "key": "tid",
+      "record": {
+        "type": "object",
+        "required": ["title", "images", "createdAt"],
+        "properties": {
+          "title": { "type": "string", "maxLength": 3000, "maxGraphemes": 300 },
+          "description": { "type": "string", "maxLength": 30000, "maxGraphemes": 3000 },
+          "images": {
+            "type": "array",
+            "minLength": 1,
+            "maxLength": 100,
+            "items": { "type": "ref", "ref": "#image" }
+          },
+          "fallbackPost": {
+            "type": "ref",
+            "ref": "com.atproto.repo.strongRef",
+            "description": "app.bsky.feed.post shown by clients that don't understand galleries."
+          },
+          "langs": {
+            "type": "array",
+            "maxLength": 3,
+            "items": { "type": "string", "format": "language" }
+          },
+          "createdAt": { "type": "string", "format": "datetime" }
+        }
+      }
+    },
+    "image": {
+      "type": "object",
+      "required": ["image", "alt"],
+      "properties": {
+        "image": { "type": "blob", "accept": ["image/*"], "maxSize": 10000000 },
+        "alt": { "type": "string", "maxLength": 10000, "maxGraphemes": 1000 },
+        "caption": { "type": "string", "maxLength": 3000, "maxGraphemes": 300 },
+        "aspectRatio": { "type": "ref", "ref": "app.bsky.embed.defs#aspectRatio" }
+      }
+    }
+  }
+}

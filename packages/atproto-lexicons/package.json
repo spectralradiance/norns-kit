@@ -1,0 +1,33 @@
+{
+  "name": "@norn-apps/atproto-lexicons",
+  "version": "0.0.0",
+  "description": "Draft AT Protocol lexicons (app.skuldr.*) shared by the Norn apps",
+  "license": "GPL-3.0-or-later",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spectralradiance/norns-kit.git",
+    "directory": "packages/atproto-lexicons"
+  },
+  "keywords": [
+    "atproto",
+    "lexicon",
+    "skuldr"
+  ],
+  "files": [
+    "lexicons",
+    "CHANGELOG.md",
+    "LICENSE",
+    "LICENSE-EXCEPTION"
+  ],
+  "exports": {
+    "./lexicons/*": "./lexicons/*",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@atproto/lexicon": "^0.7.19"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "lexicon": 1,
+  "id": "app.skuldr.theme",
+  "description": "DRAFT. A published site theme: design tokens only, no CSS or code, so any instance can render it safely. Record key 'self' is the active theme; other keys are shareable templates.",
+  "defs": {
+    "main": {
+      "type": "record",
+      "key": "any",
+      "record": {
+        "type": "object",
+        "required": ["tokens", "createdAt"],
+        "properties": {
+          "name": { "type": "string", "maxLength": 300 },
+          "tokens": { "type": "ref", "ref": "#tokens" },
+          "basedOn": {
+            "type": "ref",
+            "ref": "com.atproto.repo.strongRef",
+            "description": "Template this theme was installed from."
+          },
+          "createdAt": { "type": "string", "format": "datetime" }
+        }
+      }
+    },
+    "tokens": {
+      "type": "object",
+      "properties": {
+        "colorBg": { "type": "string", "maxLength": 32 },
+        "colorSurface": { "type": "string", "maxLength": 32 },
+        "colorText": { "type": "string", "maxLength": 32 },
+        "colorMuted": { "type": "string", "maxLength": 32 },
+        "colorAccent": { "type": "string", "maxLength": 32 },
+        "fontBody": { "type": "string", "maxLength": 200 },
+        "fontHeading": { "type": "string", "maxLength": 200 },
+        "radius": { "type": "integer", "minimum": 0, "maximum": 48 },
+        "contentWidth": { "type": "integer", "minimum": 480, "maximum": 1600 },
+        "defaultLayout": { "type": "string", "knownValues": ["timeline", "grid", "magazine"] }
+      }
+    }
+  }
+}

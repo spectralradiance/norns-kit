@@ -13,7 +13,8 @@
   "scripts": {
     "format": "prettier --write .",
     "lint": "oxlint",
-    "check": "prettier --check . && oxlint && npm run check -w @norn-apps/config-fixture",
+    "test": "npm run test --workspaces --if-present",
+    "check": "prettier --check . && oxlint && npm run check -w @norn-apps/config-fixture && npm test",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "npm run check && changeset publish"

@@ -1,0 +1,29 @@
+{
+  "lexicon": 1,
+  "id": "app.skuldr.reel",
+  "description": "DRAFT. A short vertical video with caption. The video blob lives on the user's PDS; transcoded renditions are served by the instance.",
+  "defs": {
+    "main": {
+      "type": "record",
+      "key": "tid",
+      "record": {
+        "type": "object",
+        "required": ["video", "createdAt"],
+        "properties": {
+          "video": { "type": "blob", "accept": ["video/mp4"], "maxSize": 100000000 },
+          "thumbnail": { "type": "blob", "accept": ["image/*"], "maxSize": 1000000 },
+          "alt": { "type": "string", "maxLength": 10000, "maxGraphemes": 1000 },
+          "caption": { "type": "string", "maxLength": 3000, "maxGraphemes": 300 },
+          "aspectRatio": { "type": "ref", "ref": "app.bsky.embed.defs#aspectRatio" },
+          "fallbackPost": { "type": "ref", "ref": "com.atproto.repo.strongRef" },
+          "langs": {
+            "type": "array",
+            "maxLength": 3,
+            "items": { "type": "string", "format": "language" }
+          },
+          "createdAt": { "type": "string", "format": "datetime" }
+        }
+      }
+    }
+  }
+}

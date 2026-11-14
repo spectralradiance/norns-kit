@@ -1,0 +1,49 @@
+{
+  "lexicon": 1,
+  "id": "app.skuldr.feed.subscription",
+  "description": "DRAFT, opt-in. A feed source the user follows, synced to their repo so their setup moves between instances. Repos are public: anyone can read these records.",
+  "defs": {
+    "main": {
+      "type": "record",
+      "key": "tid",
+      "record": {
+        "type": "object",
+        "required": ["source", "createdAt"],
+        "properties": {
+          "source": {
+            "type": "union",
+            "refs": ["#rssSource", "#atprotoAccountSource", "#atprotoFeedSource"]
+          },
+          "title": { "type": "string", "maxLength": 300 },
+          "tags": {
+            "type": "array",
+            "maxLength": 20,
+            "items": { "type": "string", "maxLength": 100 }
+          },
+          "createdAt": { "type": "string", "format": "datetime" }
+        }
+      }
+    },
+    "rssSource": {
+      "type": "object",
+      "required": ["url"],
+      "properties": { "url": { "type": "string", "format": "uri" } }
+    },
+    "atprotoAccountSource": {
+      "type": "object",
+      "required": ["did"],
+      "properties": { "did": { "type": "string", "format": "did" } }
+    },
+    "atprotoFeedSource": {
+      "type": "object",
+      "required": ["uri"],
+      "properties": {
+        "uri": {
+          "type": "string",
+          "format": "at-uri",
+          "description": "An app.bsky.feed.generator record."
+        }
+      }
+    }
+  }
+}

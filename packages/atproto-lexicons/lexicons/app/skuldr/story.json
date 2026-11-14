@@ -1,0 +1,22 @@
+{
+  "lexicon": 1,
+  "id": "app.skuldr.story",
+  "description": "DRAFT. A short-lived image or video. expiresAt is honoured by rhyza instances only: the record is public in the repo and other indexers may keep copies after deletion.",
+  "defs": {
+    "main": {
+      "type": "record",
+      "key": "tid",
+      "record": {
+        "type": "object",
+        "required": ["media", "createdAt", "expiresAt"],
+        "properties": {
+          "media": { "type": "blob", "accept": ["image/*", "video/mp4"], "maxSize": 50000000 },
+          "alt": { "type": "string", "maxLength": 10000, "maxGraphemes": 1000 },
+          "text": { "type": "string", "maxLength": 3000, "maxGraphemes": 300 },
+          "createdAt": { "type": "string", "format": "datetime" },
+          "expiresAt": { "type": "string", "format": "datetime" }
+        }
+      }
+    }
+  }
+}
