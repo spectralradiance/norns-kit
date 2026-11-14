@@ -148,7 +148,7 @@ All in `norns-kit`, published under the `@norn-apps` scope on npm.
 | --- | --- | --- |
 | `@norn-apps/ui` | Tokens, themes, fonts, base reset, components, app shell | All three |
 | `@norn-apps/config` | tsconfig, oxlint, Prettier and Vitest presets | All three |
-| `@norn-apps/lexicons` | AT Protocol record types, zod validators, Markdown → page rich text | Skuldr, Verdandi (publish), Urdr (sync) |
+| `@norn-apps/atproto-lexicons` | AT Protocol record types, zod validators, Markdown → page rich text. Named for the protocol so it isn't mistaken for Verdandi's lexicon, its personal word list | Skuldr, Verdandi (publish), Urdr (sync) |
 | `@norn-apps/formats` | Highlight export format, deep-link URL builders and parsers, share-URL builder | All three |
 | `@norn-apps/fetch` | SSRF-safe fetch (Node and Worker variants), Readability extraction | Urdr, Skuldr |
 | `@norn-apps/atproto` | OAuth client setup, identity, instance picker | Skuldr, later Urdr |
@@ -292,7 +292,7 @@ feed UI.
 - [x] Create `norns-kit` with Changesets and move this plan into it (Nov 13)
 - [x] `@norn-apps/config` 0.1.0: TypeScript presets (base, react, node, node-script), oxlint
       (base, react), Prettier and Vitest, checked by a fixture app
-- [ ] Move the lexicons from Skuldr into `norns-kit` as `@norn-apps/lexicons`
+- [ ] Move the lexicons from Skuldr into `norns-kit` as `@norn-apps/atproto-lexicons`
 - [x] Create the `norns-kit` repo on GitHub ([spectralradiance/norns-kit](https://github.com/spectralradiance/norns-kit), Nov 13)
 - [x] Publish `@norn-apps/config` to npm (Nov 14): 0.1.0, then 0.1.1 to allow Vitest 5
 - [ ] Adopt `@norn-apps/config` in each repo: TypeScript 6, oxlint, Prettier, Vitest
