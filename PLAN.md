@@ -290,8 +290,9 @@ feed UI.
       apps can look up the schemas
 - [x] Rename the GitHub repos and folders to `urdr-reader`, `verdandi-writer`, `skuldr-social`
 - [x] Rename Urdr and Skuldr in code (Nov 13). Urdr copies its old `echtra` browser database
-      across on first open; its Worker is now `urdr-reader`, so the next deploy goes to a new
-      workers.dev URL and the `echtra` Worker can be deleted after. Skuldr's cookie rename signs
+      across on first open. Its Worker is `urdr-reader`, deployed Nov 13 at
+      urdr-reader.matthewrcooper4.workers.dev; no `echtra` Worker had been deployed, so no
+      readers' data was left at an old address. Skuldr's cookie rename signs
       everyone in once more; Docker instances from before the rename set `POSTGRES_USER` and
       `POSTGRES_DB` to `rhyza`
 - [ ] Rename Verdandi in code once its work in progress is committed: package and product
