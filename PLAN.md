@@ -294,7 +294,7 @@ feed UI.
       (base, react), Prettier and Vitest, checked by a fixture app
 - [ ] Move the lexicons from Skuldr into `norns-kit` as `@norn-apps/lexicons`
 - [x] Create the `norns-kit` repo on GitHub ([spectralradiance/norns-kit](https://github.com/spectralradiance/norns-kit), Nov 13)
-- [x] Publish `@norn-apps/config` 0.1.0 to npm (Nov 14; tag `@norn-apps/config@0.1.0`)
+- [x] Publish `@norn-apps/config` to npm (Nov 14): 0.1.0, then 0.1.1 to allow Vitest 5
 - [ ] Adopt `@norn-apps/config` in each repo: TypeScript 6, oxlint, Prettier, Vitest
 
 **Phase 1 — Shared look**
