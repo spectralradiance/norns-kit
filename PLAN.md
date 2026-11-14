@@ -297,7 +297,7 @@ feed UI.
 - [x] Create the `norns-kit` repo on GitHub ([spectralradiance/norns-kit](https://github.com/spectralradiance/norns-kit), Nov 13)
 - [x] Publish `@norn-apps/config` to npm (Nov 14): 0.1.0, then 0.1.1 to allow Vitest 5, then
       0.1.2 turning off two rules that flagged correct code
-- [ ] Publish `@norn-apps/atproto-lexicons` 0.1.0 to npm
+- [x] Publish `@norn-apps/atproto-lexicons` 0.1.0 to npm (Nov 13)
 - [x] Adopt `@norn-apps/config` in Urdr and Skuldr: TypeScript 6, oxlint, Prettier, Vitest
 - [ ] Adopt `@norn-apps/config` in Verdandi, once its work in progress is committed
 
