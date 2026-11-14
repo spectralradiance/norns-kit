@@ -8,6 +8,7 @@
     "es2024": true
   },
   "rules": {
-    "import/no-cycle": "warn"
+    "import/no-cycle": "warn",
+    "import/no-unassigned-import": "off"
   }
 }

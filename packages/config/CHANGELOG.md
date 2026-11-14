@@ -1,5 +1,15 @@
 # @norn-apps/config
 
+## 0.1.2
+
+### Patch Changes
+
+- Turn off two oxlint rules that flagged correct code in Urdr Reader. The base preset now allows
+  side-effect imports such as `import './index.css'` (`import/no-unassigned-import`). The react
+  preset no longer asks for a native tag in place of an ARIA role (`jsx-a11y/prefer-tag-over-role`):
+  it wanted `fieldset` for a `role="group"` button row and `<dialog>` for a custom sheet, swaps
+  that change layout and behaviour without making either more accessible.
+
 ## 0.1.1
 
 ### Patch Changes

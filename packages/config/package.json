@@ -1,6 +1,6 @@
 {
   "name": "@norn-apps/config",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Shared TypeScript, oxlint, Prettier and Vitest presets for the Norn apps",
   "license": "GPL-3.0-or-later",
   "type": "module",

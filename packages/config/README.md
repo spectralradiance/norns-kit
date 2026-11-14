@@ -49,9 +49,12 @@ oxlint skips what `.gitignore` lists, so make sure it lists `node_modules/`. An
 patterns from the app's own config.
 
 - `oxlint/base.json`: the correctness rules as errors and suspicious ones as warnings, with
-  the TypeScript, unicorn, oxc and import plugins.
+  the TypeScript, unicorn, oxc and import plugins. Side-effect imports (`import './index.css'`)
+  are allowed.
 - `oxlint/react.json`: base plus the React and jsx-a11y plugins, with the rules of hooks as
-  errors and missing effect dependencies as warnings.
+  errors and missing effect dependencies as warnings. `prefer-tag-over-role` is off: it asks for
+  `fieldset` in place of a `role="group"` button row and `<dialog>` in place of a custom sheet.
+  Both swaps change layout and behaviour without making anything more accessible.
 
 ## Prettier
 
